@@ -75,7 +75,10 @@ const ContactSection = () => {
           
           {/* Form */}
           <div>
-            <form onSubmit={handleSubmit} className="bg-card rounded-2xl p-8 shadow-card">
+            <form onSubmit={handleSubmit} 
+              data-netlify="true"
+              netlify-honeypot="bot-field" 
+              className="bg-card rounded-2xl p-8 shadow-card">
               <div className="space-y-6">
                 <div>
                   <label htmlFor="fullName" className="block text-sm font-sans font-medium text-foreground mb-2">
