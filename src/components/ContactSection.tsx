@@ -17,14 +17,14 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleSubmit = () => {
     toast({
       title: "Message Sent!",
       description: "Thank you for reaching out. We'll get back to you soon.",
     });
-    setFormData({ fullName: "", email: "", phone: "", message: "" });
   };
+
+
 
   return (
     <section id="contact" className="section-padding bg-secondary/30">
@@ -76,9 +76,13 @@ const ContactSection = () => {
           {/* Form */}
           <div>
             <form onSubmit={handleSubmit} 
+              name="contact"
+              method="post"
               data-netlify="true"
               netlify-honeypot="bot-field" 
               className="bg-card rounded-2xl p-8 shadow-card">
+                <input type="hidden" name="form-name" value="contact" />
+                <input type="hidden" name="bot-field" />
               <div className="space-y-6">
                 <div>
                   <label htmlFor="fullName" className="block text-sm font-sans font-medium text-foreground mb-2">
