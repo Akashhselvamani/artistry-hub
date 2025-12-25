@@ -17,12 +17,42 @@ const ContactSection = () => {
     }));
   };
 
-  const handleSubmit = () => {
-    toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. We'll get back to you soon.",
-    });
-  };
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+
+      const form = e.currentTarget;
+      const formData = new FormData(form);
+
+      try {
+        await fetch("/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/x-www-form-urlencoded",
+          },
+          body: new URLSearchParams(formData as any).toString(),
+        });
+
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out.",
+        });
+
+        setFormData({
+          fullName: "",
+          email: "",
+          phone: "",
+          message: "",
+        });
+      } catch {
+        toast({
+          title: "Error",
+          description: "Submission failed.",
+          variant: "destructive",
+        });
+      }
+    };
+
+
 
 
 
@@ -75,11 +105,12 @@ const ContactSection = () => {
           
           {/* Form */}
           <div>
-            <form onSubmit={handleSubmit} 
-              name="contact"
-              method="post"
-              data-netlify="true"
-              netlify-honeypot="bot-field" 
+           <form
+            name="contact"
+            method="post"
+            data-netlify="true"
+            netlify-honeypot="bot-field"
+            onSubmit={handleSubmit}
               className="bg-card rounded-2xl p-8 shadow-card">
                 <input type="hidden" name="form-name" value="contact" />
                 <input type="hidden" name="bot-field" />
