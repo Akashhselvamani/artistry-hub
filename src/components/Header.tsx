@@ -25,7 +25,7 @@ const Header = () => {
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
-          {["About", "Testimonials", "Feedback", "Contact"].map((item) => (
+          {["About", "Testimonials", "Feedback", "Contact", "Blog"].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
