@@ -36,7 +36,7 @@ const AboutSection = () => {
             <div className="mt-10 flex flex-wrap gap-8">
               <div>
                 <span className="block text-4xl font-serif text-primary">150+</span>
-                <span className="text-sm text-muted-foreground font-sans">Artists Represented</span>
+                <span className="text-sm text-muted-foreground font-sans">ASASA Represented</span>
               </div>
               <div>
                 <span className="block text-4xl font-serif text-primary">12</span>
