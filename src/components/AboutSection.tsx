@@ -12,20 +12,16 @@ const AboutSection = () => {
             </span>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-foreground leading-tight mb-6">
-              Nurturing Artistry, Celebrating Vision
+              Where Beauty Meets Expertise
             </h2>
             
             <div className="space-y-5 text-muted-foreground font-sans leading-relaxed">
               <p>
-                We are a creative agency built on passion, artistry, and meaningful relationships. 
-                Our foundation lies in the belief that every artist carries a unique voice—one that 
-                deserves to be heard, celebrated, and shared with the world.
+                Saranya Vikart Makeover Artist in Chengalpattu is a trusted and leading makeover specialist with nearly a decade of experience, specializing in bridal makeovers and a wide range of beauty services for all occasions. Known for delivering high-quality, personalized results.
               </p>
               
               <p>
-                Every artist we represent is guided, supported, and celebrated for their unique voice. 
-                We don't just manage talent; we nurture dreams, foster growth, and create pathways 
-                for artists to reach their fullest potential.
+                Our commitment to excellence, use of professional techniques, and affordable pricing have earned us the appreciation of many happy customers, making us a reliable choice for flawless, elegant, and stunning makeovers.
               </p>
               
               <p className="text-foreground font-medium italic border-l-4 border-accent pl-5">
@@ -36,15 +32,15 @@ const AboutSection = () => {
             <div className="mt-10 flex flex-wrap gap-8">
               <div>
                 <span className="block text-4xl font-serif text-primary">150+</span>
-                <span className="text-sm text-muted-foreground font-sans">Artists Represented</span>
+                <span className="text-sm text-muted-foreground font-sans">Valued Clients</span>
               </div>
               <div>
-                <span className="block text-4xl font-serif text-primary">12</span>
+                <span className="block text-4xl font-serif text-primary">6+</span>
                 <span className="text-sm text-muted-foreground font-sans">Years of Excellence</span>
               </div>
               <div>
                 <span className="block text-4xl font-serif text-primary">300+</span>
-                <span className="text-sm text-muted-foreground font-sans">Successful Projects</span>
+                <span className="text-sm text-muted-foreground font-sans">Successful Makeovers</span>
               </div>
             </div>
           </div>
