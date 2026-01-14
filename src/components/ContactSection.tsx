@@ -82,7 +82,7 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <p className="font-sans font-medium text-foreground">Email Us</p>
-                  <p className="text-muted-foreground font-sans">hello@artistagency.com</p>
+                  <a href= "mailto:saranyavikat@saranyavikartmakeover.art" className="text-muted-foreground font-sans">saranyavikat@saranyavikartmakeover.art</a>
                 </div>
               </div>
               
@@ -94,9 +94,16 @@ const ContactSection = () => {
                   </svg>
                 </div>
                 <div>
-                  <p className="font-sans font-medium text-foreground">Visit Us</p>
-                  <p className="text-muted-foreground font-sans">123 Art District, Creative City</p>
-                </div>
+  <p className="font-sans font-medium text-foreground">Visit Us</p>
+  <a
+    href="https://maps.app.goo.gl/EY4hfyYoYYBhV1fBA"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-muted-foreground font-sans hover:text-foreground transition-colors duration-200"
+  >
+    Chengalpattu
+  </a>
+</div>
               </div>
             </div>
           </div>
@@ -114,51 +121,84 @@ const ContactSection = () => {
                 <input type="hidden" name="bot-field" />
               <div className="space-y-6">
                 <div>
-                  <label htmlFor="fullName" className="block text-sm font-sans font-medium text-foreground mb-2">
-                    Full Name
-                  </label>
-                  <input
-                    type="text"
-                    id="fullName"
-                    name="fullName"
-                    value={formData.fullName}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-xl font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300"
-                    placeholder="Your name"
-                  />
-                </div>
+  <label
+    htmlFor="fullName"
+    className="block text-sm font-sans font-medium text-foreground mb-2"
+  >
+    Full Name
+  </label>
+
+  <input
+    type="text"
+    id="fullName"
+    name="fullName"
+    value={formData.fullName}
+    onChange={(e) => {
+      const value = e.target.value;
+      if (value.length <= 35) {
+        handleChange(e);
+      }
+    }}
+    maxLength={35}
+    required
+    className="w-full px-4 py-3 bg-background border border-border rounded-xl font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300"
+    placeholder="Enter your full name"
+  />
+</div>
                 
                 <div>
-                  <label htmlFor="email" className="block text-sm font-sans font-medium text-foreground mb-2">
-                    Email Address
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="w-full px-4 py-3 bg-background border border-border rounded-xl font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300"
-                    placeholder="you@example.com"
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-sans font-medium text-foreground mb-2">
-                    Contact Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-xl font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300"
-                    placeholder="+1 (555) 000-0000"
-                  />
-                </div>
+  <label
+    htmlFor="email"
+    className="block text-sm font-sans font-medium text-foreground mb-2"
+  >
+    Email Address
+  </label>
+
+  <input
+    type="email"
+    id="email"
+    name="email"
+    value={formData.email}
+    onChange={(e) => {
+      const value = e.target.value;
+      if (value.length <= 70) {
+        handleChange(e);
+      }
+    }}
+    maxLength={70}
+    required
+    className="w-full px-4 py-3 bg-background border border-border rounded-xl font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300"
+    placeholder="Enter your email"
+  />
+</div>
+               <div className="flex items-center">
+  {/* Country Code */}
+  <span className="px-4 py-3 bg-muted border border-border border-r-0 rounded-l-xl text-sm font-sans text-foreground">
+    +91
+  </span>
+
+  {/* Phone Input */}
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    value={formData.phone}
+    onChange={(e) => {
+      const value = e.target.value.replace(/\D/g, "");
+      if (value.length <= 10) {
+        handleChange({
+          target: { name: "phone", value },
+        });
+      }
+    }}
+    maxLength={10}
+    pattern="[0-9]{10}"
+    inputMode="numeric"
+    className="w-full px-4 py-3 bg-background border border-border border-l-0 rounded-r-xl font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300"
+    placeholder="XXXXXXXXXX"
+  />
+</div>
+
                 
                 <div>
                   <label htmlFor="message" className="block text-sm font-sans font-medium text-foreground mb-2">
@@ -172,16 +212,28 @@ const ContactSection = () => {
                     required
                     rows={4}
                     className="w-full px-4 py-3 bg-background border border-border rounded-xl font-sans text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all duration-300 resize-none"
-                    placeholder="Tell us about your project or inquiry..."
+                    placeholder="Tell us about your big day"
                   />
                 </div>
                 
                 <button
-                  type="submit"
-                  className="w-full py-4 bg-primary text-primary-foreground font-sans font-medium rounded-xl transition-all duration-300 hover:bg-primary/90 hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0"
-                >
-                  Send Message
-                </button>
+  type="submit"
+  className="group relative w-full py-4 bg-primary text-primary-foreground font-sans font-medium rounded-xl overflow-hidden
+             transition-all duration-300
+             hover:bg-primary/90 hover:shadow-xl hover:-translate-y-1
+             active:translate-y-0 active:shadow-md"
+>
+  {/* Shine animation */}
+  <span
+    className="pointer-events-none absolute inset-0 -translate-x-full group-hover:translate-x-full
+               bg-gradient-to-r from-transparent via-white/30 to-transparent
+               transition-transform duration-700"
+  />
+
+  {/* Button text */}
+  <span className="relative z-10">Send Message</span>
+</button>
+
               </div>
             </form>
           </div>

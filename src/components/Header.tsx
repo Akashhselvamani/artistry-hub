@@ -21,11 +21,11 @@ const Header = () => {
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between">
         <a href="#" className="font-serif text-xl md:text-2xl text-primary-foreground">
-          <span className={scrolled ? "text-foreground" : ""}>Artist Agency</span>
+          <span className={scrolled ? "text-foreground" : ""}>Saranya Vikart Makeover</span>
         </a>
         
         <nav className="hidden md:flex items-center gap-8">
-          {["About", "Testimonials", "Feedback", "Contact", "Blog"].map((item) => (
+          {["About", "Testimonials", "Feedback", "Contact",].map((item) => (
             <a
               key={item}
               href={`#${item.toLowerCase()}`}
@@ -38,7 +38,7 @@ const Header = () => {
           ))}
         </nav>
         
-        <a
+        {/* <a
           href="#contact"
           className={`hidden md:inline-flex px-5 py-2.5 font-sans text-sm font-medium rounded-full transition-all duration-300 ${
             scrolled
@@ -47,7 +47,7 @@ const Header = () => {
           }`}
         >
           Get in Touch
-        </a>
+        </a> */}
         
         {/* Mobile Menu Button */}
         <button
