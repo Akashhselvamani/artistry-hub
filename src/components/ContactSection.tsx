@@ -24,12 +24,10 @@ const ContactSection = () => {
       const formData = new FormData(form);
 
       try {
-        await fetch("/", {
+        await fetch("/.netlify/functions/send-mail", {
           method: "POST",
-          headers: {
-            "Content-Type": "application/x-www-form-urlencoded",
-          },
-          body: new URLSearchParams(formData as any).toString(),
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(formData),
         });
 
         toast({
@@ -37,12 +35,12 @@ const ContactSection = () => {
           description: "Thank you for reaching out.",
         });
 
-        setFormData({
-          fullName: "",
-          email: "",
-          phone: "",
-          message: "",
-        });
+        // setFormData({
+        //   fullName: "",
+        //   email: "",
+        //   phone: "",
+        //   message: "",
+        // });
       } catch {
         toast({
           title: "Error",
