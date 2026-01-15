@@ -23,11 +23,13 @@ const ContactSection = () => {
       const form = e.currentTarget;
       const formData = new FormData(form);
 
+      const data = Object.fromEntries(formData.entries());
+
       try {
         await fetch("/.netlify/functions/send-mail", {
           method: "POST",
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(formData),
+          body: JSON.stringify(data),
         });
 
         toast({

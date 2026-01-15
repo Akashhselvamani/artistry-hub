@@ -5,18 +5,20 @@ export const handler = async (event) => {
     if (event.httpMethod !== 'POST') {
       return { statusCode: 405, body: 'Method Not Allowed' };
     }
-    console.log("BODY:", event.body);
-    console.log("PARSED:", JSON.parse(event.body));
+    //console.log("BODY:", event.body);
+    //console.log("PARSED:", JSON.parse(event.body));
     const { fullName, email,phone, message } = JSON.parse(event.body || '{}');
 
-    // console.log(name);
+    // console.log(fullName);
     // console.log(email);
+    // console.log(phone);
     // console.log(message);
-        
+    //console.log(process.env.RESEND_API_KEY); 
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-      from: "Contact <onboarding@resend.dev>",
+      from: "Acme <onboarding@resend.dev>",
+      //to: ['saranyavikat@saranyavikartmakeover.art'],
       to: ['saranyavikat@saranyavikartmakeover.art'],
       subject: 'New Contact Form',
       html: `
