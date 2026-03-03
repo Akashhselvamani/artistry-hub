@@ -22,37 +22,39 @@ const ContactSection = () => {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    const form = e.currentTarget;
-    const formData = new FormData(form);
+    e.preventDefault();
 
-    try {
-      await fetch("/", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/x-www-form-urlencoded",
-        },
-        body: new URLSearchParams(formData as any).toString(),
-      });
+      const form = e.currentTarget;
+      const formData = new FormData(form);
 
-      toast({
-        title: "Message Sent!",
-        description: "Thank you for reaching out.",
-      });
+      const data = Object.fromEntries(formData.entries());
 
-      setFormData({
-        fullName: "",
-        email: "",
-        phone: "",
-        message: "",
-      });
-    } catch {
-      toast({
-        title: "Error",
-        description: "Submission failed.",
-        variant: "destructive",
-      });
-    }
-  };
+      try {
+        await fetch("/.netlify/functions/send-mail", {
+          method: "POST",
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data),
+        });
+
+        toast({
+          title: "Message Sent!",
+          description: "Thank you for reaching out.",
+        });
+
+        // setFormData({
+        //   fullName: "",
+        //   email: "",
+        //   phone: "",
+        //   message: "",
+        // });
+      } catch {
+        toast({
+          title: "Error",
+          description: "Submission failed.",
+          variant: "destructive",
+        });
+      }
+    };
 
   return (
     <section id="contact" className="section-padding bg-secondary/30">
