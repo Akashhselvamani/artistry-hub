@@ -1,10 +1,11 @@
-import aboutImage from "@/assets/about-artistnew.jpg.png";
+import aboutImage from "@/assets/about-artistnew.jpg";
 
 const AboutSection = () => {
   return (
     <section id="about" className="section-padding bg-background">
       <div className="container-narrow">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          
           {/* Text Content */}
           <div className="order-2 lg:order-1">
             <span className="inline-block text-accent font-sans text-sm tracking-[0.2em] uppercase mb-4">
@@ -45,19 +46,26 @@ const AboutSection = () => {
             </div>
           </div>
           
-          {/* Image */}
+          {/* Image Section */}
           <div className="order-1 lg:order-2 relative">
-            <div className="relative">
-              <img
-                src={aboutImage}
-                alt="Creative artist in studio"
-                className="w-full h-[500px] lg:h-[600px] object-cover rounded-2xl shadow-card"
-              />
+            
+            <div className="relative overflow-hidden rounded-2xl shadow-card">
               
+              {/* Aspect Ratio Container */}
+              <div className="w-full aspect-[4/5]">
+                <img
+                  src={aboutImage}
+                  alt="Saranya Makeup Artist"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 hover:scale-105"
+                />
+              </div>
+
               {/* Decorative Elements */}
               <div className="absolute -bottom-6 -left-6 w-32 h-32 bg-accent/20 rounded-2xl -z-10" />
               <div className="absolute -top-6 -right-6 w-24 h-24 border-2 border-primary/20 rounded-2xl -z-10" />
+              
             </div>
+
           </div>
         </div>
       </div>
