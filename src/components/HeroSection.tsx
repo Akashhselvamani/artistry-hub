@@ -1,4 +1,4 @@
-import heroVideo from "@/assets/banner.mp4";
+import heroVideo from "@/assets/Banner.mp4";
 
 const HeroSection = () => {
   return (
