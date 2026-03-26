@@ -77,10 +77,11 @@ const Footer = () => {
   <p className="text-background/50 font-sans text-sm">
     Site is developed and maintained by{" "}
     <a
+      target="_blank"
       href="https://reromspaces.com/"
       className="text-background/70 hover:text-background transition-colors"
     >
-      Reromespace
+      Reromspaces
     </a>
   </p>
 </div>
