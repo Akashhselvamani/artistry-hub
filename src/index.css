@@ -1,101 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap');
 
 @layer base {
   :root {
-    --background: 35 30% 97%;
-    --foreground: 20 15% 15%;
+    --background: 38 20% 98%; /* Warm Alabaster #FAF9F6 */
+    --foreground: 0 0% 7%; /* Deep Charcoal #121212 */
 
-    --card: 35 25% 95%;
-    --card-foreground: 20 15% 15%;
+    --card: 0 0% 100%; /* White #FFFFFF */
+    --card-foreground: 0 0% 7%; /* Deep Charcoal #121212 */
 
-    --popover: 35 30% 97%;
-    --popover-foreground: 20 15% 15%;
+    --popover: 38 20% 98%; /* Warm Alabaster */
+    --popover-foreground: 0 0% 7%;
 
-    --primary: 12 45% 35%;
-    --primary-foreground: 35 30% 97%;
+    --primary: 341 81% 17%; /* Velvet Cabernet #4C081E */
+    --primary-foreground: 38 20% 98%; /* Warm Alabaster */
 
-    --secondary: 35 20% 90%;
-    --secondary-foreground: 20 15% 20%;
+    --secondary: 0 0% 100%; /* White */
+    --secondary-foreground: 341 81% 17%; /* Velvet Cabernet */
 
-    --muted: 35 15% 92%;
-    --muted-foreground: 20 10% 45%;
+    --muted: 38 12% 92%;
+    --muted-foreground: 0 0% 35%;
 
-    --accent: 38 70% 55%;
-    --accent-foreground: 20 15% 12%;
+    --accent: 45 49% 61%; /* Brushed Satin Gold #CBB26A */
+    --accent-foreground: 0 0% 7%; /* Deep Charcoal */
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 20% 88%;
-    --input: 30 20% 88%;
-    --ring: 12 45% 35%;
+    --border: 43 32% 84%; /* Light goldish border #E5DCC6 */
+    --input: 43 32% 84%;
+    --ring: 341 81% 17%; /* Velvet Cabernet */
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
 
     /* Custom design tokens */
-    --hero-overlay: 20 20% 10%;
-    --warm-gradient: linear-gradient(135deg, hsl(35 30% 97%) 0%, hsl(35 25% 93%) 100%);
-    --accent-gradient: linear-gradient(135deg, hsl(12 45% 35%) 0%, hsl(38 70% 55%) 100%);
-    --card-shadow: 0 4px 30px -10px hsl(20 20% 30% / 0.12);
-    --card-shadow-hover: 0 12px 40px -10px hsl(20 20% 30% / 0.18);
+    --hero-overlay: 341 81% 8%; /* Velvet Cabernet Dark Overlay */
+    --warm-gradient: linear-gradient(135deg, #FAF9F6 0%, #FFFFFF 100%);
+    --accent-gradient: linear-gradient(135deg, #4C081E 0%, #CBB26A 100%);
+    --gold-gradient: linear-gradient(135deg, #A88F54 0%, #F5E8C7 25%, #CBB26A 50%, #FAF1D6 75%, #9E8247 100%);
+    --maroon-gradient: linear-gradient(135deg, #4C081E 0%, #29040F 100%);
+    --card-shadow: 0 10px 45px -15px rgba(76, 8, 30, 0.08);
+    --card-shadow-hover: 0 20px 55px -10px rgba(76, 8, 30, 0.15);
 
     /* Typography */
     --font-serif: 'Playfair Display', Georgia, serif;
     --font-sans: 'DM Sans', system-ui, sans-serif;
 
     /* Sidebar defaults */
-    --sidebar-background: 35 25% 95%;
-    --sidebar-foreground: 20 15% 25%;
-    --sidebar-primary: 12 45% 35%;
-    --sidebar-primary-foreground: 35 30% 97%;
-    --sidebar-accent: 35 20% 90%;
-    --sidebar-accent-foreground: 20 15% 20%;
-    --sidebar-border: 30 20% 88%;
-    --sidebar-ring: 12 45% 35%;
+    --sidebar-background: 38 20% 98%;
+    --sidebar-foreground: 0 0% 7%;
+    --sidebar-primary: 341 81% 17%;
+    --sidebar-primary-foreground: 38 20% 98%;
+    --sidebar-accent: 38 12% 92%;
+    --sidebar-accent-foreground: 0 0% 7%;
+    --sidebar-border: 43 32% 84%;
+    --sidebar-ring: 341 81% 17%;
   }
 
   .dark {
-    --background: 20 15% 10%;
-    --foreground: 35 20% 95%;
+    --background: 0 0% 7%; /* Deep Charcoal #121212 */
+    --foreground: 38 20% 98%; /* Warm Alabaster #FAF9F6 */
 
-    --card: 20 15% 14%;
-    --card-foreground: 35 20% 95%;
+    --card: 341 65% 6%; /* Velvet Cabernet Black #1C060D */
+    --card-foreground: 38 20% 98%;
 
-    --popover: 20 15% 12%;
-    --popover-foreground: 35 20% 95%;
+    --popover: 0 0% 7%;
+    --popover-foreground: 38 20% 98%;
 
-    --primary: 38 70% 55%;
-    --primary-foreground: 20 15% 10%;
+    --primary: 45 49% 61%; /* Brushed Satin Gold #CBB26A */
+    --primary-foreground: 0 0% 7%;
 
-    --secondary: 20 12% 18%;
-    --secondary-foreground: 35 20% 90%;
+    --secondary: 0 0% 7%;
+    --secondary-foreground: 45 49% 61%;
 
-    --muted: 20 12% 20%;
-    --muted-foreground: 35 15% 60%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 38 12% 75%;
 
-    --accent: 12 45% 45%;
-    --accent-foreground: 35 20% 95%;
+    --accent: 341 81% 17%;
+    --accent-foreground: 38 20% 98%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 20 12% 22%;
-    --input: 20 12% 22%;
-    --ring: 38 70% 55%;
+    --border: 45 30% 25%;
+    --input: 45 30% 25%;
+    --ring: 45 49% 61%;
 
-    --hero-overlay: 20 20% 5%;
-    --sidebar-background: 20 15% 12%;
-    --sidebar-foreground: 35 20% 90%;
-    --sidebar-primary: 38 70% 55%;
-    --sidebar-primary-foreground: 20 15% 10%;
-    --sidebar-accent: 20 12% 18%;
-    --sidebar-accent-foreground: 35 20% 90%;
-    --sidebar-border: 20 12% 22%;
-    --sidebar-ring: 38 70% 55%;
+    --hero-overlay: 0 0% 5%;
+    --sidebar-background: 0 0% 7%;
+    --sidebar-foreground: 38 20% 98%;
+    --sidebar-primary: 45 49% 61%;
+    --sidebar-primary-foreground: 0 0% 7%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 38 20% 98%;
+    --sidebar-border: 45 30% 25%;
+    --sidebar-ring: 45 49% 61%;
   }
 }
 
@@ -131,13 +134,32 @@
     background-image: var(--accent-gradient);
   }
 
+  .text-gold-gradient {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gold-gradient);
+  }
+
   .card-elevated {
-    @apply bg-card rounded-2xl shadow-card transition-all duration-500;
+    @apply bg-card rounded-2xl shadow-card border border-border/40 transition-all duration-500;
   }
 
   .card-elevated:hover {
-    @apply shadow-card-hover;
-    transform: translateY(-4px);
+    @apply shadow-card-hover border-accent/40;
+    transform: translateY(-6px);
+  }
+
+  .glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.2);
+  }
+
+  .glass-card-dark {
+    background: rgba(34, 34, 34, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(212, 175, 55, 0.15);
   }
 }
 
