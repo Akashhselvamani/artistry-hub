@@ -160,7 +160,7 @@ const ContactSection = () => {
                     <input
                       type="text"
                       name="fullName"
-                      placeholder="e.g. Priyadarshini"
+                      placeholder="Name"
                       value={formData.fullName}
                       onChange={handleChange}
                       required
@@ -197,7 +197,7 @@ const ContactSection = () => {
                     <input
                       type="email"
                       name="email"
-                      placeholder="e.g. name@example.com"
+                      placeholder="name@example.com"
                       value={formData.email}
                       onChange={handleChange}
                       required
